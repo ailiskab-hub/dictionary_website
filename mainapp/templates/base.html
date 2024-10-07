@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+  <style>
+  input[type=text] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 30px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+  }
+  </style>
+<!--  <style>-->
+<!--  input[type=submit] {-->
+<!--    background-color: #82A800;-->
+<!--    width: 100%;-->
+<!--    border: none;-->
+<!--    color: white;-->
+<!--    padding: 12px 32px;-->
+<!--    text-decoration: none;-->
+<!--    margin: 2px 2px;-->
+<!--    cursor: pointer;-->
+<!--    align: right;-->
+<!--  }-->
+
+<!--  input[type=submit]:focus {-->
+<!--    background-color: green;-->
+<!--  }-->
+<!--  </style>-->
+  <title>{% block title %} {% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+
+<!-- Top Background Image Wrapper -->
+<!--<div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');">-->
+<div class="bgded" style="background-image: url({% static 'images/01.jpg' %});">
+  <div class="wrapper overlay">
+    <header id="header" class="hoc clear">
+      <nav id="mainav" class="clear">
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+          <li class="active"><a href="{% url 'index' %}">Home</a></li>
+          <li class="active"><a href="words_list">Words list</a></li>
+          <li class="active"><a href="add_word">Add word</a></li>
+        </ul>
+      </nav>
+      <div id="logo">
+        <!-- ################################################################################################ -->
+        <h1><a href="{% url 'index' %}">My dictionary</a></h1>
+        <p>explore new words</p>
+        <!-- ################################################################################################ -->
+      </div>
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+
+{% block content %}
+
+{% endblock %}
+
+  <!-- ################################################################################################ -->
+</div>
+
+{% block page_content %}
+
+{% endblock %}
+
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <div class="one_third first">
+      <h6 class="title">Contacts</h6>
+      <ul class="nospace linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Saint Petersburg
+          </address>
+        </li>
+<!--        <li><i href="tel:89827154012" class="fa fa-phone"></i> +7 (982) 715 4012</li>-->
+        <li><i class="fa fa-phone"></i><a href="tel:89827154012">+7 (982) 715 4012</a></li>
+        <li><i class="fa fa-envelope-o"></i><a href="mailto:alicakabalina@gmail.com">alicakabalina@gmail.com</a></li>
+      </ul>
+    </div>
+
+    <div class="one_third">
+      <h6 class="title">useful resources</h6>
+
+      <ul class="nospace linklist">
+        <li><a href="https://dictionary.cambridge.org/ru/%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D0%B0%D0%BD%D0%B3%D0%BB%D0%BE-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9/" target="_blank">Cambridge Dictionary</a></li>
+        <li><a href="https://macmillaneducation.my.salesforce-sites.com/help?language=en_US" target="_blank" >Macmillan Dictionary</a></li>
+        <li><a href="https://www.collinsdictionary.com/" target="_blank" >Collins Dictionary</a></li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="title">Check for updates</h6>
+      <ul class="nospace linklist">
+        <li>
+          <article>
+            <h2 class="nospace font-x1"><a href="words_list">Updates </a></h2>
+            <p class="nospace">Regular updates of out dictionary will help you to learn new words!</p>
+          </article>
+        </li>
+
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+<!-- IE9 Placeholder Support -->
+<script src="{% static 'layout/scripts/jquery.placeholder.min.js' %}"></script>
+<!-- / IE9 Placeholder Support -->
+</body>
+</html>

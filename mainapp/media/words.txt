@@ -1,0 +1,4 @@
+root,корень
+laptop,ноутбук
+sugar,сахар
+failure,неудача

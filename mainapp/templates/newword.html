@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+
+{% block title %} Add word {% endblock %}
+
+<!--Страница для добавления слов, доступная по-->
+<!--адресу "/add_word". Страница содержит форму-->
+<!--для добавления новых слов. Форма состоит из-->
+<!--2 полей(поля для ввода слова на языке оригинал-->
+<!--и поле для ввода перевода), а также кнопка Submit.-->
+<!--Нажатие на кнопку обозначает POST запрос на эту же-->
+<!--страницу. Название полей: word1, word2. После нажатия-->
+<!--слова добавляются в файл, и пользователь переходит на-->
+<!--первую страницу.-->
+
+{% block content %}
+
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="center btmspace-50">
+      <h2 class="heading">Add new word</h2>
+
+        <form method="POST" action="#">
+            {% csrf_token %}
+            <fieldset>
+                <input type="text" class="center btmspace-50" name="ori" placeholder="Original word">
+                <input type="text" class="center btmspace-50" name="tr" placeholder="Translation">
+    <!--              <button type="submit" value="submit">Submit</button>-->
+
+<!--                <button type="submit" class="center btmspace-30" value="Submit">Submit</button>-->
+
+                <button type='submit' value="submit">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+<!--    <div class="clear"></div>-->
+  </main>
+</div>
+<div class="wrapper coloured">
+  <div class="hoc clear">
+    <!-- ################################################################################################ -->
+    <figure id="logos"></figure>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+
+
+
+{% endblock %}

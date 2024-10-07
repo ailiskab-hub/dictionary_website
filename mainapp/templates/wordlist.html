@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %} List of words {% endblock %}
+
+<!--Страница списка слов, доступная по адресу "/words_list".-->
+<!--Таблица из двух колоннок. Первая колоннка это слово на -->
+<!--оригинале, вторая - перевод слова. Таблица должна иметь-->
+<!--класс = "words_list"-->
+
+{% block page_content %}
+<div id="pageintro" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <div class="wrapper row3">
+            <div class="center btmspace-50">
+              <h2 class="heading">Table of words</h2>
+              <table class="words_list" width="400px">
+                  <tr>
+                      <th width="200px">Original</th>
+                      <th width="200px">Translation</th>
+                  </tr>
+                  {% for ori, tr in words %}
+                  <tr>
+                      <td>{{ ori }}</td>
+                      <td>{{ tr }}</td>
+                  </tr>
+                  {% endfor %}
+
+                </table>
+            </div>
+    </div>
+
+    <footer>
+        <ul class="nospace inline pushright">
+            <li><a class="btn" href="add_word">Add new</a></li>
+        </ul>
+    </footer>
+  </div>
+
+
+{% endblock %}
